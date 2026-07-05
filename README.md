@@ -69,10 +69,3 @@ This prints the full step-by-step trace to the console and saves two plots in th
 | `save_line_plot(...)` | One reusable plotting helper used for both charts |
 | `main()` | Runs everything and saves the plots |
 
-Every calculation step is intentionally left visible (explicit loops instead of one-line matrix ops) since the assignment requires the update process to be traceable, not abstracted away. The only things collapsed into helpers are plumbing that isn't part of the required math — cost formula and plotting boilerplate — to avoid repeating the same code three times.
-
-## Notes / assumptions
-
-- **Learning rate (0.01)** and **iteration count (4, matching group size)** aren't specified in the assignment itself — adjust `learning_rate` and `n_iterations` at the top of the script if your instructor wants different values.
-- `b = [1, 1]` is treated as one shared bias value broadcast across both data points, per the assignment's initial values.
-- This script only covers Part 4 (code). Part 1 (EM algorithm) uses a different dataset (Galton's parents/children heights) and is a separate deliverable.
