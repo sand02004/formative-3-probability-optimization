@@ -1,3 +1,18 @@
+## Contributions
+
+# Part 1: Probability Distributions (EM Algorithm)
+- Loaded and preprocessed the Galton Families height dataset
+- Selected father-child height pairing (per assignment's either/or requirement)
+- Implemented deduplication to prevent family-size bias in parent heights
+- Implemented the EM algorithm from scratch:
+  - Gaussian PDF function
+  - E-step (responsibility calculation)
+  - M-step (parameter updates)
+  - Log-likelihood convergence tracking
+- Built the required iteration tracking table (iterations 0, 1, 2)
+- Implemented live posterior-probability classification demo
+- Validated EM's blind estimates against true known group means
+
 # Part 4: Gradient Descent in Code
 
 Converts the Part 3 manual gradient descent calculations into a runnable Python script, with a SciPy-based numerical check on the gradient and two Matplotlib plots.
