@@ -46,44 +46,68 @@ Running the notebook prints:
 - Two plots: the fitted two-Gaussian mixture curve, and convergence of 
   mu/sigma/log-likelihood across iterations
 
-# Part 2: Bayesian Probability
+Part 2: Bayesian Probability
 
-This notebook implements **Bayes' Theorem** using the IMDb Movie Reviews dataset to calculate the posterior probability of positive sentiment based on selected keywords.
+This notebook implements Bayes' Theorem using the IMDb Movie Reviews dataset to calculate the posterior probability of positive sentiment based on selected keywords.
 
-## File
+File
 
-- `formative_3_bayesian_probability.ipynb`
 
-## How to Run
+formative_3_bayesian_probability.ipynb
 
-1. Open the notebook in Jupyter Notebook, VS Code, or Google Colab.
-2. Ensure the IMDb Movie Reviews dataset is available in the expected location.
-3. Run all cells from top to bottom (**Run All**).
 
-## What the Notebook Does
+How to Run
 
-- Loads and preprocesses the IMDb Movie Reviews dataset.
-- Uses the selected positive keywords:
-  - `great`
-  - `excellent`
-  - `amazing`
-  - `love`
-- Calculates:
-  - Prior Probability: `P(Positive)`
-  - Likelihood: `P(keyword | Positive)`
-  - Marginal Probability: `P(keyword)`
-  - Posterior Probability: `P(Positive | keyword)`
-- Displays the computed probabilities for each keyword using Bayes' Theorem.
 
-## Requirements
+Open the notebook in Jupyter Notebook, VS Code, or Google Colab.
+Ensure the IMDb Movie Reviews dataset is available in the expected location.
+Run all cells from top to bottom (Run All).
 
-- Python 3
-- Jupyter Notebook or Google Colab
-- Standard Python libraries only (no machine learning libraries)
 
-## Output
+What the Notebook Does
 
-Running the notebook prints the probability calculations for each selected keyword, demonstrating the application of Bayes' Theorem for sentiment analysis.
+
+Loads and preprocesses the IMDb Movie Reviews dataset.
+Uses the selected keywords:
+
+Positive indicators: great, excellent, amazing, love
+Negative indicators: awful, boring, terrible, disappointing
+
+
+
+Both keyword sets are evaluated using the same conditional direction,
+P(Positive | keyword), for every word regardless of whether it is a
+positive or negative indicator — we do not switch to P(Negative | keyword)
+for negative-sounding words. The posterior naturally falls below the 0.5
+prior for negative keywords, since the math itself reveals the sentiment
+direction.
+Calculates, for all 8 keywords:
+
+Prior Probability: P(Positive)
+Likelihood: P(keyword | Positive)
+Marginal Probability: P(keyword)
+Posterior Probability: P(Positive | keyword)
+
+
+
+Displays the computed probabilities for each keyword in a results table,
+followed by a discussion of the pattern: positive keywords produce
+posteriors above the prior, negative keywords produce posteriors below it.
+
+
+Requirements
+
+
+Python 3
+Jupyter Notebook or Google Colab
+Standard Python libraries only (no machine learning libraries)
+
+
+Output
+
+Running the notebook prints the prior, likelihood, marginal, and posterior
+probability for each of the 8 selected keywords (4 positive, 4 negative),
+demonstrating the application of Bayes' Theorem for sentiment analysis.
 
 # Part 3: Gradient Descent Manual Calculation
 
