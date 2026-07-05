@@ -13,6 +13,44 @@
 - Implemented live posterior-probability classification demo
 - Validated EM's blind estimates against true known group means
 
+# Part 2: Bayesian Probability
+
+This notebook implements **Bayes' Theorem** using the IMDb Movie Reviews dataset to calculate the posterior probability of positive sentiment based on selected keywords.
+
+## File
+
+- `formative_3_bayesian_probability.ipynb`
+
+## How to Run
+
+1. Open the notebook in Jupyter Notebook, VS Code, or Google Colab.
+2. Ensure the IMDb Movie Reviews dataset is available in the expected location.
+3. Run all cells from top to bottom (**Run All**).
+
+## What the Notebook Does
+
+- Loads and preprocesses the IMDb Movie Reviews dataset.
+- Uses the selected positive keywords:
+  - `great`
+  - `excellent`
+  - `amazing`
+  - `love`
+- Calculates:
+  - Prior Probability: `P(Positive)`
+  - Likelihood: `P(keyword | Positive)`
+  - Marginal Probability: `P(keyword)`
+  - Posterior Probability: `P(Positive | keyword)`
+- Displays the computed probabilities for each keyword using Bayes' Theorem.
+
+## Requirements
+
+- Python 3
+- Jupyter Notebook or Google Colab
+- Standard Python libraries only (no machine learning libraries)
+
+## Output
+
+Running the notebook prints the probability calculations for each selected keyword, demonstrating the application of Bayes' Theorem for sentiment analysis.
 
 # Part 4: Gradient Descent in Code
 
