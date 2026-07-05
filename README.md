@@ -1,17 +1,50 @@
-## Contributions
+## Part 1: Probability Distributions (EM Algorithm)
 
-# Part 1: Probability Distributions (EM Algorithm)
-- Loaded and preprocessed the Galton Families height dataset
-- Selected father-child height pairing (per assignment's either/or requirement)
-- Implemented deduplication to prevent family-size bias in parent heights
-- Implemented the EM algorithm from scratch:
-  - Gaussian PDF function
-  - E-step (responsibility calculation)
-  - M-step (parameter updates)
-  - Log-likelihood convergence tracking
-- Built the required iteration tracking table (iterations 0, 1, 2)
-- Implemented live posterior-probability classification demo
-- Validated EM's blind estimates against true known group means
+Implements the Expectation-Maximization (EM) algorithm from scratch to separate 
+an unlabeled mixture of child and father heights into two Gaussian distributions, 
+using the Galton Families dataset.
+
+### File
+`part1_em_algorithm.ipynb`
+
+### How to Run
+1. Open the notebook in Google Colab (or Jupyter/VS Code).
+2. Ensure `GaltonFamilies.csv` is available at `/content/GaltonFamilies.csv` 
+   (or update the path in Cell 1).
+3. Run all cells from top to bottom.
+
+### What the Notebook Does
+- Loads the Galton Families dataset and merges child heights with father 
+  heights into a single unlabeled pool (per the assignment's requirement to 
+  treat the data as an unlabeled two-Gaussian mixture).
+- Deduplicates father heights by family to prevent families with more 
+  children from biasing the father Gaussian's estimated mean/variance.
+- Visualizes the combined distribution and quantifies how many points a 
+  simple global-mean split would misclassify.
+- Implements the EM algorithm from scratch:
+  - `gaussian()` — Gaussian probability density function
+  - `e_step()` — computes responsibilities (soft group assignment)
+  - `m_step()` — updates means, variances, and mixing proportions
+  - `compute_log_likelihood()` — tracks model fit for convergence
+- Runs the main EM loop and prints a tracking table for iterations 0, 1, and 2 
+  (mu1, mu2, sigma1^2, sigma2^2, pi1, pi2, log-likelihood).
+- Implements `classify_height()` — given any height, prints the exact 
+  posterior probability it belongs to the child group vs. the father group.
+- Validates EM's blind parameter estimates against the true known group means.
+
+### Requirements
+- Python 3
+- numpy, pandas, matplotlib
+- Google Colab or Jupyter Notebook
+
+### Output
+Running the notebook prints:
+- Dataset summary and deduplication diagnostics
+- A histogram of the mixed height distribution with the global mean marked
+- The EM tracking table for iterations 0-2, plus final converged parameters
+- A live classification demo showing P(Child) vs P(Father) for a test height
+- Two plots: the fitted two-Gaussian mixture curve, and convergence of 
+  mu/sigma/log-likelihood across iterations
 
 # Part 2: Bayesian Probability
 
