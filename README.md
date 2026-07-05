@@ -13,6 +13,7 @@
 - Implemented live posterior-probability classification demo
 - Validated EM's blind estimates against true known group means
 
+
 # Part 4: Gradient Descent in Code
 
 Converts the Part 3 manual gradient descent calculations into a runnable Python script, with a SciPy-based numerical check on the gradient and two Matplotlib plots.
